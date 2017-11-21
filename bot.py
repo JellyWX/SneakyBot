@@ -21,7 +21,7 @@ bot.remove_command("help")
 @bot.event
 async def on_ready():
     print('\n\nLogged in as: {} - {}\nVersion: {}\n'.format(bot.user.name, bot.user.id, discord.__version__))
-    await bot.change_presence(game=discord.Game(name=' !help | Moderating the server!'))
+    await bot.change_presence(game=3(name='The server..'))
     
     
     
