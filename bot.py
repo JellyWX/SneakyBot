@@ -1,4 +1,4 @@
-###############Imports################
+#Imports
 import discord
 from discord.ext import commands
 import traceback
@@ -8,14 +8,15 @@ with open("token.txt", 'r') as f:
     token = f.read().strip('\n')
 
     
-###############Defining the variables################
+#Stuff
 initial_extensions = ('cogs.Admin', 'cogs.fun')
 
 
                       
 bot = commands.Bot(command_prefix='!', description='A bot for sneakys help server!')
 bot.remove_command("help")
-##########On ready#######################
+
+#The first step to a great bot! On ready events!
 
 @bot.event
 async def on_ready():
@@ -24,7 +25,7 @@ async def on_ready():
     
     
     
-#########Cog loader###########################
+#Cog Loader
 
 
 if __name__ == '__main__':
@@ -36,6 +37,6 @@ if __name__ == '__main__':
             traceback.print_exc()
         print('Successfully logged in and booted...!')
     
-###########Token##############################
+#The super super super token that is locked away by ninjas and flying penguins?
 
 bot.run(token)
