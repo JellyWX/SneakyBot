@@ -66,7 +66,7 @@ class Admin:
                 embed.set_footer(text="SneakyModBot  | Made by the SneakyCodeGroup")
                 await channel.send(embed=embed)
                 await ctx.send("<:greentick:359040809036677130> | Warned `{}`!".format(user))
-                embed=discord.Embed(title="Warning!")   
+                embed=discord.Embed(title="Warning!")
                 embed.add_field(name="User:", value=user, inline=False)
                 embed.add_field(name="UserID:", value=user.id, inline=False)
                 embed.add_field(name="Reason:", value=reason, inline=False)
@@ -95,7 +95,7 @@ class Admin:
             await channel.send(':eyes: | {} Tried to use msg | ID: {}'.format(ctx.message.author, ctx.message.author.id))
             await ctx.send("<:redtick:359040808873099265> | Staff Only! | Action has been logged!")
 
-        
+
     @commands.command()
     async def help(self, ctx):
         channel = self.bot.get_channel(372116367266152450)
@@ -111,8 +111,8 @@ class Admin:
         else:
             await channel.send(':eyes: | {} Tried to use help | ID: {}'.format(ctx.message.author, ctx.message.author.id))
             await ctx.send("<:redtick:359040808873099265> | Staff Only! | Action has been logged!")
-        
-    
+
+
     @commands.command()
     async def log(self, ctx, *, log : str = None):
         channel = self.bot.get_channel(372116367266152450)
@@ -126,7 +126,21 @@ class Admin:
         else:
             await channel.send(':eyes: | {} Tried to use log | ID: {}'.format(ctx.message.author, ctx.message.author.id))
             await ctx.send("<:redtick:359040808873099265> | Staff Only! | Action has been logged!")
-            
+
+    @commands.command()
+    async def mute(self, ctx, member: discord.Member = None, time: int = None, *, reason: str = None):
+        if ctx.message.author.id in admin_ids:
+            if member == None:
+                await ctx.send("<:redtick:359040808873099265> | You must have a **member** to mute")
+            elif time == None:
+                await ctx.send("<:redtick:359040808873099265> | You must have a **time in minutes** to mute for. Use 0 to mute indefinitely.")
+            elif reason == None:
+                await ctx.send("<:redtick:359040808873099265> | You must have a **reason** specified")
+
+        else:
+            await channel.send(':eyes: | {} Tried to use mute | ID: {}'.format(ctx.message.author, ctx.message.author.id))
+            await ctx.send("<:redtick:359040808873099265> | Staff Only! | Action has been logged!")
+
 def setup(bot):
     bot.add_cog(Admin(bot))
     print('Admin commands is loaded')
