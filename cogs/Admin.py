@@ -110,6 +110,7 @@ class Admin:
             embed.add_field(name="!warn", value="(user) (reason) - Warns a user must have a reason", inline=False)
             embed.add_field(name="!msg", value="(user) (message) - Sends a moderator message", inline=False)
             embed.add_field(name="!log", value="(message) - Add a message in the log example: I updated someones role..", inline=False)
+            embed.add_field(name="!mute", value="(user) (time) (reason) - Gives a user the 'Muted' role for the specified amount of time, or indefinitely if time is 'none'. Ex. !mute Altarrel#1219 30s5m12h7d He's just too awesome!")
             await ctx.message.author.send(embed=embed)
             await ctx.send("<:greentick:359040809036677130> | Sent you the help message")
         else:
