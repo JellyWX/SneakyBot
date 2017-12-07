@@ -2,7 +2,7 @@
 import discord
 from discord.ext import commands
 import traceback
-import sqlite3
+# import sqlite3
 
 
 with open("token.txt", 'r') as f:
@@ -16,15 +16,13 @@ initial_extensions = ('cogs.Admin', 'cogs.botsubmit')
 
 bot = commands.Bot(command_prefix='!', description='A bot for sneakys help server!')
 bot.remove_command("help")
-bot.db = sqlite3.connect("modbotdata.db")
-bot.cursor = bot.db.cursor()
-bot.cursor.execute("CREATE TABLE IF NOT EXISTS muted (id INTEGER)")
-bot.db.commit()
-bot.cursor.execute("SELECT * FROM muted")
-bot.muted = bot.cursor.fetchall()
+# bot.db = sqlite3.connect("bot_data.db")
+# bot.cursor = bot.db.cursor()
+# bot.cursor.execute("CREATE TABLE IF NOT EXISTS muted (id INTEGER)")
+# bot.db.commit()
 
 #The first step to a great bot! On ready events!
-#Nah
+# Nah -Altarrel
 
 @bot.event
 async def on_ready():
