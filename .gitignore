@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+cogs/__pycache__/
 *.py[cod]
 *$py.class
 
@@ -99,3 +100,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+token.txt
+bot_data.db
+*.pyc
+*.pyc
