@@ -16,7 +16,7 @@ class Admin:
         if ctx.message.author.id in admin_ids:
             await ctx.send('<:greentick:359040809036677130> | Testing Complete!')
         else:
-            await channel.send(':eyes: | {} Tried to use testing | ID: {}'.format(ctx.message.author, ctx.message.author.id))
+            await channel.send(':eyes: | {} Tried to use testlog | ID: {}'.format(ctx.message.author, ctx.message.author.id))
             await ctx.send("<:redtick:359040808873099265> | Staff Only! | Action has been logged!")
 
 
