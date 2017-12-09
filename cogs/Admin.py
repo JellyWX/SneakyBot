@@ -192,7 +192,7 @@ class Admin:
                         embed.add_field(name="Reason:", value=reason, inline=True)
                         embed.add_field(name="ModeratorID:", value=ctx.message.author.id, inline=True)
                         embed.add_field(name="Moderator:", value=ctx.message.author, inline=True)
-                        embed.add_field(name="Time Set", value="{} or {} seconds".format(format_time(time), time))
+                        embed.add_field(name="Time Set", value="{} or {} seconds".format(time, format_time(time)))
                         embed.set_footer(text="SneakyModBot  | Made by the SneakyCodeGroup")
                         await channel.send(embed=embed)
 
