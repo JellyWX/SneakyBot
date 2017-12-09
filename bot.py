@@ -10,7 +10,7 @@ with open("token.txt", 'r') as f:
 
 
 #Cogs/extensions to load when the script is run (is that proper grammar?)
-initial_extensions = ('cogs.Admin', 'cogs.botsubmit')
+initial_extensions = ('cogs.Admin', 'cogs.commands')
 
 
 
