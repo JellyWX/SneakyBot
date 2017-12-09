@@ -44,7 +44,7 @@ If you agree to these terms, type "yes". If you type anything else your submissi
         asyncRole = discord.utils.get(ctx.guild.roles, name = "discord.py Async")
         if "discord.py Async" in [role.name for role in ctx.author.roles]:
             await ctx.author.remove_roles(asyncRole)
-            await ctx.send("<:greentick:359040809036677130> | You already had the 'discord.py Async' role, so I remvoed it")
+            await ctx.send("<:greentick:359040809036677130> | You already had the 'discord.py Async' role, so I removed it")
         else:
             await ctx.author.add_roles(asyncRole)
             await ctx.send("<:greentick:359040809036677130> | You have been assigned the 'discord.py Async' role")
@@ -54,7 +54,7 @@ If you agree to these terms, type "yes". If you type anything else your submissi
         rewriteRole = discord.utils.get(ctx.guild.roles, name = "discord.py Rewrite")
         if "discord.py Rewrite" in [role.name for role in ctx.author.roles]:
             await ctx.author.remove_roles(rewriteRole)
-            await ctx.send("<:greentick:359040809036677130> | You already had the 'discord.py Rewrite' role, so I remvoed it")
+            await ctx.send("<:greentick:359040809036677130> | You already had the 'discord.py Rewrite' role, so I removed it")
         else:
             await ctx.author.add_roles(rewriteRole)
             await ctx.send("<:greentick:359040809036677130> | You have been assigned the 'discord.py Rewrite' role")
