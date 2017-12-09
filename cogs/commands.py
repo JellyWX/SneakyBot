@@ -40,7 +40,7 @@ If you agree to these terms, type "yes". If you type anything else your submissi
             traceback.print_tb(error.__traceback__)
 
     @commands.command()
-    async def async(self, ctx):
+    async def iamasync(self, ctx):
         asyncRole = discord.utils.get(ctx.guild.roles, name = "discord.py Async")
         if "discord.py Async" in [role.name for role in ctx.author.roles]:
             await ctx.author.remove_roles(asyncRole)
@@ -50,7 +50,7 @@ If you agree to these terms, type "yes". If you type anything else your submissi
             await ctx.send("<:greentick:359040809036677130> | You have been assigned the 'discord.py Async' role")
 
     @commands.command()
-    async def rewrite(self, ctx):
+    async def iamrewrite(self, ctx):
         rewriteRole = discord.utils.get(ctx.guild.roles, name = "discord.py Rewrite")
         if "discord.py Rewrite" in [role.name for role in ctx.author.roles]:
             await ctx.author.remove_roles(rewriteRole)
