@@ -60,4 +60,4 @@ If you agree to these terms, type "yes". If you type anything else your submissi
             await ctx.send("<:greentick:359040809036677130> | You have been assigned the 'discord.py Rewrite' role")
 
 def setup(bot):
-    bot.add_cog(BotSubmit(bot))
+    bot.add_cog(Commands(bot))
