@@ -56,7 +56,7 @@ If you agree to these terms, type "yes". If you type anything else your submissi
             await ctx.author.remove_roles(rewriteRole)
             await ctx.send("<:greentick:359040809036677130> | You already had the 'discord.py Rewrite' role, so I remvoed it")
         else:
-            await ctx.author.add_roles(asyncRole)
+            await ctx.author.add_roles(rewriteRole)
             await ctx.send("<:greentick:359040809036677130> | You have been assigned the 'discord.py Rewrite' role")
 
 def setup(bot):
