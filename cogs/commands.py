@@ -14,9 +14,9 @@ class Commands:
     @commands.cooldown(1, 30, commands.BucketType.user)
     async def submit(self, ctx, link : str = None, *, description: str = None):
         await ctx.send('''By submitting your bot you understand and agree to the following :
-1. No bot's breaking discord Tos
+1. No bots breaking Discord TOS
 2. No spam bots or auto invite bots
-3. To not use this bot in programming and only in bot-tests
+3. To not use this bot in the programming channels and only in <#366590343291863040>
 
 If you agree to these terms, type "yes". If you type anything else your submission will be canceled.''')
 
