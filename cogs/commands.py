@@ -1,7 +1,5 @@
 import discord
 from discord.ext import commands
-import list
-from list import admin_ids
 import traceback
 import asyncio
 
@@ -19,7 +17,7 @@ class Commands:
 3. To not use this bot in the programming channels and only in <#366590343291863040>
 
 If you agree to these terms, type "yes". If you type anything else your submission will be canceled.''')
-        
+
         try:
             msg = await self.bot.wait_for('message', check=lambda m: m.channel == ctx.channel and m.author == ctx.author, timeout = 30)
         except asyncio.TimeoutError:
