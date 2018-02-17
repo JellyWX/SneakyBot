@@ -19,11 +19,9 @@ class Commands:
 3. To not use this bot in the programming channels and only in <#366590343291863040>
 
 If you agree to these terms, type "yes". If you type anything else your submission will be canceled.''')
-
-        def check(m):
-            return m.channel == ctx.channel and m.author == ctx.author
+        
         try:
-            msg = await self.bot.wait_for('message', check = check, timeout = 30)
+            msg = await self.bot.wait_for('message', check=lambda m: m.channel == ctx.channel and m.author == ctx.author, timeout = 30)
         except asyncio.TimeoutError:
             return await ctx.send("<:redtick:359040808873099265> | You took too long to respond, your submission was canceled.")
 
@@ -42,7 +40,7 @@ If you agree to these terms, type "yes". If you type anything else your submissi
     @commands.command()
     async def iamasync(self, ctx):
         asyncRole = discord.utils.get(ctx.guild.roles, name = "discord.py Async")
-        if "discord.py Async" in [role.name for role in ctx.author.roles]:
+        if asyncRole in ctx.author.roles:
             await ctx.author.remove_roles(asyncRole)
             await ctx.send("<:greentick:359040809036677130> | You already had the 'discord.py Async' role, so I removed it")
         else:
@@ -52,7 +50,7 @@ If you agree to these terms, type "yes". If you type anything else your submissi
     @commands.command()
     async def iamrewrite(self, ctx):
         rewriteRole = discord.utils.get(ctx.guild.roles, name = "discord.py Rewrite")
-        if "discord.py Rewrite" in [role.name for role in ctx.author.roles]:
+        if rewriteRole in ctx.author.roles:
             await ctx.author.remove_roles(rewriteRole)
             await ctx.send("<:greentick:359040809036677130> | You already had the 'discord.py Rewrite' role, so I removed it")
         else:
