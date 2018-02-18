@@ -3,39 +3,32 @@
 # Donate to him at https://www.patreon.com/jellywx and add his bot with
 # https://discordapp.com/oauth2/authorize?client_id=349920059549941761&scope=bot&permissions=268446820
 
+# I did a little update and its now shorter and slightly faster
 
-import time
+def format_time2(text):
+  d = {
+    's' : 0,
+    'm' : 0,
+    'h' : 0,
+    'd' : 0
+  }
+  t = {
+    's' : 1,
+    'm' : 60,
+    'h' : 3600,
+    'd' : 86400
+  }
+  current = '0'
 
-def format_time(text):
-    current_buffer = '0'
-    seconds = 0
-    minutes = 0
-    hours = 0
-    days = 0
+  for char in text:
+    if char in '0123456789':
+      current += char
 
-    for char in text:
-        if char == 's':
-          seconds = int(current_buffer)
-          current_buffer = '0'
+    elif char in d.keys():
+      d[char] = int(current)
+      current = '0'
 
-        elif char == 'm':
-          minutes = int(current_buffer)
-          current_buffer = '0'
+    else:
+      return None
 
-        elif char == 'h':
-          hours = int(current_buffer)
-          current_buffer = '0'
-
-        elif char == 'd':
-          days = int(current_buffer)
-          current_buffer = '0'
-
-        else:
-          try:
-            int(char)
-            current_buffer += char
-          except ValueError:
-            return None
-
-    time_sec = round(seconds + (minutes * 60) + (hours * 3600) + (days * 86400) + int(current_buffer))
-    return time_sec
+  return sum([v * t[k] for k, v in d.items()]) + int(current)
